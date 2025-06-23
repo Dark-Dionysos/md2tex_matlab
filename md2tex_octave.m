@@ -22,7 +22,7 @@
 %% Author: Angus Z. Wong
 %% Created: 2025-06-20
 
-function [] = md2tex_octave (filepath,head="withtitle",author="none")
+function [] = md2tex_octave (filepath,head="notitle",author="none")
 % comfirmation the argument typr is correct
 if ~ischar(author)
   error("the author type is wrong, it must be char!");

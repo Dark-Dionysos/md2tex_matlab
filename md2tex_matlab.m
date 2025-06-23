@@ -22,7 +22,11 @@
 %% Created: 2025-06-20
 
 function [] = md2tex_matlab (filepath,head,author)
-    
+	arguments
+        filepath;
+		head char = 'notitle';
+		author char = 'none';
+	end
 % comfirmation the argument typr is correct
 if ~ischar(author)
   error("the author type is wrong, it must be char!");
@@ -38,7 +42,7 @@ md = strjoin(md,'\n');
 if strcmp(author,"none")==1
   md = strcat(['\documentclass[11pt]{article}' newline '\usepackage{array,graphicx,url,ulem,utfsym}' newline '\begin{document}'],[newline md],[newline '\end{document}']);
 else
-  md = strcat(['\documentclass[11pt]{article}' newline '\usepackage{array,graphicx,url,ulem,utfsym}\n\\begin{document}\n\\author{'],author,['}' newline],md,[newline '\\end{document}']);
+  md = strcat(['\documentclass[11pt]{article}' newline '\usepackage{array,graphicx,url,ulem,utfsym}' newline '\begin{document}' newline '\author{'],author,['}' newline],[newline md],[newline '\end{document}']);
 end
 if strcmp(head,"withtitle")==1
   % replace heading1
