@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Md2tex Allows You Convert Your Markdown File into Latex
 ## How to Use
 1. Download to your local fold, suppose you download to you $HOME, just type following command in terminal: `mkdir ~/md2tex`, `git clone https://github.com/Anugs-Z-Wong/md2tex_matlab ~/md2tex`, if you do not use `git`, you could use `curl` in Linus or `iwr` command in Windows, or just download the files in the website.
@@ -31,3 +32,6 @@ The non-supported are:
 1. Emoji
 1. Picture with URL (for latex engine could not download the picture from Internet, so use your local picture instead).
 1. Head ID and link to Head ID.
+=======
+# md2tex_matlab
+>>>>>>> 32ea22904a8810199babc4ae0fd602e42a1ae15f
