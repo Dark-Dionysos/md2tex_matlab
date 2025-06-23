@@ -1,6 +1,6 @@
 # Md2tex Allows You Convert Your Markdown File into Latex
 ## How to Use
-1. Download to your local fold, suppose you download to you $HOME, just type following command in terminal: `mkdir ~/md2tex`, `git clone https://github.com/Anugs-Z-Wong/md2tex_matlab.git ~/md2tex`, if you do not use `git`, you could use `curl` in Linus or `iwr` command in Windows Powershell, or just download the files in the website.
+1. Download to your local folder, suppose you download to you $HOME, just type following command in terminal: `mkdir ~/md2tex`, `git clone https://github.com/Anugs-Z-Wong/md2tex_matlab.git ~/md2tex`, if you do not use `git`, you could use `curl` in Linus or `iwr` command in Windows Powershell, or just download the files in the website.
 2. Copy your markdown files to the folder you download.
 3. Launch the [Matlab](https://www.mathworks.com/products/matlab.html), in the command window, type following commands:`cd ~/md2tex`, `md2tex_matlab('<your md file name>')`, for using arguments, please refer next section.
 4. The tex file will appear in the same folder named `result.tex`.
