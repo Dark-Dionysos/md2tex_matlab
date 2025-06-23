@@ -2,7 +2,7 @@
 ## How to Use
 1. Download to your local fold, suppose you download to you $HOME, just type following command in terminal: `mkdir ~/md2tex`, `git clone https://github.com/Anugs-Z-Wong/md2tex_matlab.git ~/md2tex`, if you do not use `git`, you could use `curl` in Linus or `iwr` command in Windows Powershell, or just download the files in the website.
 2. Copy your markdown files to the folder you download.
-3. Lanch the [Matlab](https://www.mathworks.com/products/matlab.html), in the command window, type following commands:`cd ~/md2tex`, `md2tex_matlab('<your md file name>')`, for using arguments, please refer next section.
+3. Launch the [Matlab](https://www.mathworks.com/products/matlab.html), in the command window, type following commands:`cd ~/md2tex`, `md2tex_matlab('<your md file name>')`, for using arguments, please refer next section.
 4. The tex file will appear in the same folder named `result.tex`.
 
 If you do not use Matlab, you can use the [Matlab Online](https://www.mathworks.com/products/matlab-online.html) instead, just copy the `md2tex_matlab.m` and the md file you want to convert to [Matlab Drive](https://www.mathworks.com/products/matlab-drive.html), and type the commands mentioned above.
@@ -10,7 +10,7 @@ If you do not use Matlab, you can use the [Matlab Online](https://www.mathworks.
 If you are the user of [Octave](https://octave.org/), follow these steps:
 1. Download the md2tex files to your local folder just as mentioned above.
 1. Copy your md file into the folder where you download the md2tex.
-1. Lanch Octave and in command window type: `cd ~/md2tex`.
+1. Launch Octave and in command window type: `cd ~/md2tex`.
 1. Type:`md2tex_octave('<your md file name>')`.
 1. The output file will appear in the same folder named `result.tex`.
 ## About Format in Md File
