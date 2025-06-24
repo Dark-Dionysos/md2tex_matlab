@@ -42,7 +42,7 @@ md = strjoin(md,'\n');
 if strcmp(author,"none")==1
   md = strcat(['\documentclass[11pt]{article}' newline '\usepackage{array,graphicx,url,ulem,utfsym}' newline '\begin{document}'],[newline md],[newline '\end{document}']);
 else
-  md = strcat(['\documentclass[11pt]{article}' newline '\usepackage{array,graphicx,url,ulem,utfsym}' newline '\begin{document}' newline '\author{'],author,['}' newline],[newline md],[newline '\end{document}']);
+  md = strcat(['\documentclass[11pt]{article}' newline '\usepackage{array,graphicx,url,ulem,utfsym}' newline '\begin{document}' newline '\author{'],author,'}',[newline md],[newline '\end{document}']);
 end
 if strcmp(head,"withtitle")==1
   % replace heading1
@@ -98,6 +98,7 @@ md = regexprep(md,'^-\s','\t\\item ','lineanchors','dotexceptnewline');
 % table
 [tstart,tend] = regexp(md,'(^\|.*\|\n)+','once','lineanchors','dotexceptnewline');
 while ~isempty(tstart)
+%  md = char(md);
   md = tableconvert(md,tstart,tend);
   [tstart,tend] = regexp(md,'(^\|.*\|\n)+','once','lineanchors','dotexceptnewline');
 end
@@ -129,9 +130,9 @@ c_string = num2str(ones(1,row_num));
 c_string = erase(c_string,' ');
 c_string = strrep(c_string,'1','c');
 %% the preamble and tail of tabular enviroment
-heading = strcat([newline '\begin{tabular}{'], c_string, ['}' newline], [newline '\hline' newline]);
-tail = strcat([newline '\hline' newline], [newline '\end{tabular}' newline]);
-table = strcat([heading newline],[newline table],[tail newline]);
+heading = strcat([newline '\begin{tabular}{'], c_string, '}', [newline '\hline']);
+tail = strcat([newline '\hline'], [newline '\end{tabular}']);
+table = strcat(heading,[newline table],tail);
 %% replace the line under the title
 table = regexprep(table,'(\|\s*\-+\s*)+\|','\\hline');
 %% repalce the seperator at the first
@@ -140,5 +141,5 @@ table = regexprep(table,'^\|','','lineanchors','dotexceptnewline');
 table = regexprep(table,'\|$','\\\','lineanchors','dotexceptnewline');
 %% replace the seperator
 table = strrep(table,'|','&');
-output_string = strcat(string(1:string_start-1),table,string(string_end+1:end));
+output_string = strcat(string(1:string_start-1),table,[newline string(string_end+1:end)]);
 end
