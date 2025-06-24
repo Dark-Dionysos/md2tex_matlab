@@ -98,7 +98,6 @@ md = regexprep(md,'^-\s','\t\\item ','lineanchors','dotexceptnewline');
 % table
 [tstart,tend] = regexp(md,'(^\|.*\|\n)+','once','lineanchors','dotexceptnewline');
 while ~isempty(tstart)
-  md = char(md);
   md = tableconvert(md,tstart,tend);
   [tstart,tend] = regexp(md,'(^\|.*\|\n)+','once','lineanchors','dotexceptnewline');
 end
