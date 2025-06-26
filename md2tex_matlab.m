@@ -123,7 +123,7 @@ function output_string = tableconvert (string,string_start,string_end)
 table = string(string_start:string_end);
 [column_s, column_e] = regexp(table,'^\|.*\|\n','once','lineanchors','dotexceptnewline');
 one_column = table(column_s:column_e);
-row_s = regexp(one_column,'\|.*?[^\|]','lineanchors','dotexceptnewline');
+row_s = regexp(one_column,'\|','lineanchors','dotexceptnewline');
 row_num = length(row_s)-1;
 %% construct string made up by 'c' fro row format in tabular enviroment.
 c_string = num2str(ones(1,row_num));
