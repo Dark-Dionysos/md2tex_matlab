@@ -41,6 +41,10 @@ else
   for i = 1:lines
     md{i}=fgetl(fid);
   endfor
+  %% if the file's last line is not ended by \n, then it needs to read one more line.
+  if feof(fid) ~= 0
+    md{lines+1} = fgetl(fid);
+  end
   fclose(fid);
 endif
 % add heading and tail
