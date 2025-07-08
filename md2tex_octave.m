@@ -42,7 +42,7 @@ else
     md{i}=fgetl(fid);
   endfor
   %% if the file's last line is not ended by \n, then it needs to read one more line.
-  if feof(fid) ~= 0
+  if feof(fid) ~= 1
     md{lines+1} = fgetl(fid);
   end
   fclose(fid);
